@@ -1,0 +1,366 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow-y: scroll;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 11px rgba(0, 255, 60, 1);
+}
+
+header {
+    backdrop-filter: blur(2px);
+    border-radius: 2px;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    position: sticky;
+}
+
+#logo {
+    width: 100px;
+    height: auto;
+}
+
+#logo > img {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+}
+
+.contactButton > button {
+    margin-top: 10px;
+    padding: 9px 20px;
+    background-color: transparent;
+    border: 2px solid rgba(0, 255, 0, 0.7);
+    border-radius: 12px;
+    color: rgba(0, 255, 0, 0.9);
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.contactButton > button:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.7);
+    border-color: rgba(0, 255, 0, 1);
+    color: rgba(0, 255, 0, 1);
+}
+
+
+@keyframes buttonHover {
+    to {
+        box-shadow: 2px 3px 40px white;
+    }
+}
+
+.container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.alldiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.title-div{
+    margin-top: 100px;
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    border: solid white;
+}
+#title {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 38px;
+    text-shadow: 2px 4px 11px rgba(0, 255, 60, 1);
+    margin-top: 150px;
+    text-align: center; 
+}
+
+#under-title {
+    color: white;
+    font-size: 19px;
+    font-family: "Inconsolata", monospace;
+    overflow: hidden;
+    border-right: .15em solid green;
+    white-space: nowrap; 
+    display: inline-block;
+    width: 800px; 
+    opacity: 0; 
+    animation: typing 4s steps(40, end) forwards; 
+    animation-delay: 1.5s;
+    text-align: center; 
+    margin: 20px auto 0 auto; 
+}
+#under-title, .under-title-know {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 19px;
+    color: white;
+}
+
+@keyframes typing {
+    0% { 
+        width: 0; 
+        opacity: 0; 
+    }
+    1% {
+        opacity: 1; 
+    }
+    100% { 
+        width: 100%; 
+        opacity: 1;
+        border-right: .15em solid rgba(0, 128, 0, 0);
+    }
+}
+
+
+@media (max-width: 680px) {
+    #under-title {
+        white-space: normal;
+        width: 90%; 
+        animation: fadeIn 2s ease-in-out forwards;
+        opacity: 0; 
+        animation-delay: 0.5s; 
+        margin: 20px auto 0 auto; 
+    }
+
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+}
+
+
+
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+.container2{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+}
+.Know{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.855);
+    width: 30%;
+    height: 500px;
+    border-radius: 40px;
+    border: solid rgba(255, 255, 255, 0.453);
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#title-Know{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    width: 90%;
+    height: 20%;
+    color: rgba(255, 255, 255, 0.005);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    
+}
+#title-Know > img{
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    filter: invert(1) brightness(2);
+    
+}
+
+.under-title-know{
+    text-wrap: wrap;
+    display: flex;
+    text-align: center;
+    margin-top: 1px;
+    height: 80%;
+    color: white;
+    word-wrap: break-word;
+    overflow: auto;
+}
+@media (max-width: 1170px) {
+    .container2{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .Know{
+        width: 90%;
+        margin-bottom: 40px;
+    }
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid green;
+    border-radius: 5px;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: black;
+    border-radius: 12px;
+    border: solid white;
+    color: green;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+button[type="submit"]:hover {
+    animation-name: buttonHover;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes buttonHover {
+    to {
+        box-shadow: 2px 3px 40px white;
+    }
+}
+.container3{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quoteDiv{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 60%;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+#quoteTextDiv{
+    text-wrap: wrap;
+    word-wrap: break-word;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 19px;
+    width: 59%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quoteImgDiv{
+    display: flex;
+    width: 38%;
+    justify-content: flex-end;
+}
+.quoteImgDiv > img{
+    border-radius: 30px;
+    display: flex;
+}
+
+
+
+@keyframes quote-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in-quote {
+    animation: quote-fade-in 1s ease-in forwards;
+}
+
+
+@keyframes quote-fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out-quote {
+    animation: quote-fade-out 1s ease-in forwards;
+}
